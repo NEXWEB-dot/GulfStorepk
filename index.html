@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gulf Store — Premium Lifestyle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@600;700&family=Grandstander:wght@500;700;800;900&family=Quicksand:wght@500;600;700&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="vibe-kids" data-vibe="kids">
+
+  <!-- ═══════════════════════════ ANNOUNCEMENT BAR ═══════════════════════════ -->
+  <div class="announcement-bar" id="announcement-bar">
+    <div class="announcement-bar__left">
+      <span>New arrivals just landed – discover them now!&nbsp;</span>
+      <a href="#kids-products" class="announcement-bar__cta">Explore</a>
+    </div>
+    <div class="announcement-bar__right">
+      <button class="announcement-bar__locale">SAR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <button class="announcement-bar__locale"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> EN <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__inner">
+      <div class="navbar__logo">
+        <a href="index.html" aria-label="Gulf Store home">
+          <span class="logo-kids-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 36 36"><circle cx="18" cy="18" r="17" fill="#F3E8FF" stroke="#A78BDB" stroke-width="1.5"/><g transform="translate(9.5 9.5) scale(0.7)" fill="none" stroke="#A78BDB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5"/><path d="M12 7.5V9"/><path d="M7.5 12H9"/><path d="M16.5 12H15"/><path d="M12 16.5V15"/><path d="m8 8 1.88 1.88"/><path d="M14.12 9.88 16 8"/><path d="m8 16 1.88-1.88"/><path d="M14.12 14.12 16 16"/></g></svg>
+          </span>
+          <span class="logo-gs">Gulf</span><span class="logo-store">Store</span>
+        </a>
+      </div>
+      <nav class="navbar__nav" aria-label="Main navigation">
+        <a href="#kids"    class="nav-link" data-target="kids">New In</a>
+        <a href="#kids"    class="nav-link" data-target="kids">Baby</a>
+        <a href="#kids"    class="nav-link" data-target="kids">Girls</a>
+        <a href="#kids"    class="nav-link" data-target="kids">Boys</a>
+        <a href="#perfume" class="nav-link" data-target="perfume">Perfume</a>
+        <a href="#shoes"   class="nav-link" data-target="shoes">Shoes</a>
+        <a href="#"        class="nav-link nav-link--sale">Sale</a>
+      </nav>
+      <div class="navbar__actions">
+        <button class="btn-icon" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="btn-icon" aria-label="Cart" style="position:relative;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge">0</span>
+        </button>
+        <button class="btn-icon" aria-label="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+      </div>
+      <!-- Perfume-vibe navbar controls -->
+      <button class="nav-menu-btn" id="navMenuBtn" aria-expanded="false" aria-controls="navMenuPanel">
+        <span>Menu</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a href="#perfume-products" class="nav-explore-btn">Explore</a>
+      <div class="nav-menu-panel" id="navMenuPanel" hidden>
+        <a href="#kids" class="nav-link" data-target="kids">Kids</a>
+        <a href="#perfume" class="nav-link" data-target="perfume">Perfume</a>
+        <a href="#shoes" class="nav-link" data-target="shoes">Shoes</a>
+      </div>
+      <!-- Vibe indicator dots -->
+      <div class="vibe-dots" aria-hidden="true">
+        <span class="vibe-dot" data-vibe="kids" title="Kids"></span>
+        <span class="vibe-dot" data-vibe="perfume" title="Perfume"></span>
+        <span class="vibe-dot" data-vibe="shoes" title="Shoes"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════ VIBE TRANSITION OVERLAY ═══════════════════════════ -->
+  <div class="vibe-overlay" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════ SECTION 1 — KIDS ═══════════════════════════ -->
+  <section id="kids" class="category-section vibe-section kids-section" data-vibe="kids">
+
+    <!-- ── KIDS HERO: Nursery Playroom Scene + Cloud Bubble ── -->
+    <div class="kids-hero">
+      <!-- High-resolution nursery playroom background matching the reference -->
+      <div class="kids-hero__bg" aria-hidden="true">
+        <img src="assets/baby-clothes/nursery-hero-bg.jpg" alt="Cozy kids playroom" class="kids-hero__bg-img" onerror="this.style.display='none'" />
+        <div class="kids-hero__bg-tint"></div>
+      </div>
+
+      <!-- Cloud bubble — centerpiece of the hero matching reference -->
+      <div class="kids-cloud-container">
+        <!-- SVG cloud backdrop with soft translucent outer halo -->
+        <svg class="cloud-svg-bg" viewBox="0 0 800 470" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <g id="cloudShape">
+              <ellipse cx="400" cy="245" rx="320" ry="150"/>
+              <circle cx="225" cy="165" r="105"/>
+              <circle cx="400" cy="112" r="118"/>
+              <circle cx="575" cy="165" r="108"/>
+              <circle cx="670" cy="262" r="98"/>
+              <circle cx="130" cy="262" r="98"/>
+              <circle cx="255" cy="352" r="92"/>
+              <circle cx="410" cy="365" r="98"/>
+              <circle cx="565" cy="350" r="92"/>
+            </g>
+            <filter id="cloudSoftShadow" x="-10%" y="-10%" width="120%" height="125%">
+              <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#8A5BA6" flood-opacity="0.14"/>
+            </filter>
+          </defs>
+          <!-- hand-drawn white outline (offset + slightly rotated) -->
+          <use href="#cloudShape" class="cloud-outline-a" transform="translate(-6 4) rotate(-1.2 400 235)" fill="none" stroke="#fff" stroke-width="5"/>
+          <use href="#cloudShape" class="cloud-outline-b" transform="translate(8 -2) rotate(1.4 400 235) scale(1.01)" fill="none" stroke="#fff" stroke-width="4" opacity=".9"/>
+          <!-- pink body -->
+          <g filter="url(#cloudSoftShadow)"><use href="#cloudShape" fill="#FFEAF4"/></g>
+        </svg>
+
+        <!-- Cloud content -->
+        <div class="kids-cloud-content">
+          <h1 class="kids-hero__title-script">Playful Pieces</h1>
+
+          <!-- "For Little Dreamers" — on ONE line with candy rainbow colors -->
+          <p class="kids-hero__title-rainbow">
+            <span class="rainbow-word">
+              <span style="color:#6BC5D2">F</span><span style="color:#F9A825">o</span><span style="color:#E57373">r</span>
+            </span>
+            <span class="rainbow-word">
+              <span style="color:#4FC3F7">L</span><span style="color:#81C784">i</span><span style="color:#FFB74D">t</span><span style="color:#BA68C8">t</span><span style="color:#4DB6AC">l</span><span style="color:#FF8A80">e</span>
+            </span>
+            <span class="rainbow-word">
+              <span style="color:#4DD0E1">D</span><span style="color:#AED581">r</span><span style="color:#FFD54F">e</span><span style="color:#FF8A65">a</span><span style="color:#9575CD">m</span><span style="color:#4FC3F7">e</span><span style="color:#F06292">r</span><span style="color:#4DB6AC">s</span>
+            </span>
+          </p>
+
+          <p class="kids-hero__sub">Discover unique clothing, toys, and furniture chosen<br>to make every day feel a little more magical</p>
+
+          <!-- The two CTA buttons matching reference: Pink (Shop New Arrivals) & Coral (Explore by Category) -->
+          <div class="kids-hero__cta">
+            <a href="#kids-products" class="kids-btn kids-btn--pink">Shop New Arrivals</a>
+            <a href="#kids-products" class="kids-btn kids-btn--coral">Explore by Category</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SCALLOPED TICKER BANNER (soft pastel pink with semicircular scallops) ── -->
+    <div class="kids-ticker-banner" aria-label="Store features">
+      <!-- Seamless repeating semicircular scallops along top -->
+      <svg class="kids-scallop-svg" viewBox="0 0 1440 24" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <pattern id="scallopPattern" width="48" height="24" patternUnits="userSpaceOnUse">
+            <path d="M 0,24 C 0,11 11,0 24,0 C 37,0 48,11 48,24 Z" fill="#FAD4E2" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="24" fill="url(#scallopPattern)" />
+      </svg>
+
+      <div class="kids-ticker-content">
+        <div class="kids-ticker-track">
+          <span class="ticker-item"><span class="ticker-icon" aria-hidden="true" style="color:#4FA36B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span> Organic-friendly fabrics</span>
+          <span class="ticker-item"><span class="ticker-icon" aria-hidden="true" style="color:#3E8FD0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span> Handpicked international brands</span>
+          <span class="ticker-item"><span class="ticker-icon" aria-hidden="true" style="color:#F08A4B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span> Fast delivery across Saudi Arabia</span>
+          <span class="ticker-item"><span class="ticker-icon" aria-hidden="true" style="color:#E0568F"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg></span> Curated toys &amp; gifts</span>
+          <span class="ticker-item"><span class="ticker-icon" aria-hidden="true" style="color:#4FA36B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span> Organic-friendly fabrics</span>
+          <span class="ticker-item"><span class="ticker-icon" aria-hidden="true" style="color:#3E8FD0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span> Handpicked international brands</span>
+          <span class="ticker-item"><span class="ticker-icon" aria-hidden="true" style="color:#F08A4B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span> Fast delivery across Saudi Arabia</span>
+          <span class="ticker-item"><span class="ticker-icon" aria-hidden="true" style="color:#E0568F"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg></span> Curated toys &amp; gifts</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SHOP BY CATEGORY (Soft lavender title + 4 pastel cards) ── -->
+    <div id="kids-products" class="kids-categories">
+      <div class="kids-categories__header">
+        <h2 class="kids-categories__title">Shop by Category</h2>
+        <div class="kids-categories__nav" aria-label="Scroll categories">
+          <button class="kids-cat-nav kids-cat-nav--prev" aria-label="Previous category">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <button class="kids-cat-nav kids-cat-nav--next" aria-label="Next category">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="kids-cat-grid" id="kids-cat-grid">
+        <article class="kids-cat-card" style="--card-bg:#CFF0FB; --accent-color:#59BFC9;">
+          <a href="product.html?id=baby-1&vibe=kids" class="kids-cat-card__link">
+            <span class="kids-cat-card__blob kids-cat-card__blob--1" aria-hidden="true"></span>
+            <span class="kids-cat-card__blob kids-cat-card__blob--2" aria-hidden="true"></span>
+            <img src="assets/baby-clothes/baby-1.jpg" alt="Baby sherpa jumpsuit" class="kids-cat-card__img" loading="lazy" />
+            <div class="kids-cat-card__footer">
+              <span class="kids-cat-card__name">Baby</span>
+              <span class="kids-cat-card__arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="kids-cat-card" style="--card-bg:#FFEFCB; --accent-color:#F4A62A;">
+          <a href="product.html?id=baby-2&vibe=kids" class="kids-cat-card__link">
+            <span class="kids-cat-card__blob kids-cat-card__blob--1" aria-hidden="true"></span>
+            <span class="kids-cat-card__blob kids-cat-card__blob--2" aria-hidden="true"></span>
+            <img src="assets/baby-clothes/baby-2.jpg" alt="Boy colorblock fleece" class="kids-cat-card__img" loading="lazy" />
+            <div class="kids-cat-card__footer">
+              <span class="kids-cat-card__name">Boy</span>
+              <span class="kids-cat-card__arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="kids-cat-card" style="--card-bg:#FFDCE6; --accent-color:#F0709A;">
+          <a href="product.html?id=baby-4&vibe=kids" class="kids-cat-card__link">
+            <span class="kids-cat-card__blob kids-cat-card__blob--1" aria-hidden="true"></span>
+            <span class="kids-cat-card__blob kids-cat-card__blob--2" aria-hidden="true"></span>
+            <img src="assets/baby-clothes/baby-4.jpg" alt="Girl teddy bear fleece" class="kids-cat-card__img" loading="lazy" />
+            <div class="kids-cat-card__footer">
+              <span class="kids-cat-card__name">Girl</span>
+              <span class="kids-cat-card__arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="kids-cat-card" style="--card-bg:#D6F5E6; --accent-color:#5DBF8A;">
+          <a href="product.html?id=baby-3&vibe=kids" class="kids-cat-card__link">
+            <span class="kids-cat-card__blob kids-cat-card__blob--1" aria-hidden="true"></span>
+            <span class="kids-cat-card__blob kids-cat-card__blob--2" aria-hidden="true"></span>
+            <img src="assets/baby-clothes/baby-3.jpg" alt="Home cozy Disney jacket" class="kids-cat-card__img" loading="lazy" />
+            <div class="kids-cat-card__footer">
+              <span class="kids-cat-card__name">Home</span>
+              <span class="kids-cat-card__arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="kids-cat-card" style="--card-bg:#F6DFF8; --accent-color:#B26FD0;">
+          <a href="product.html?id=baby-1&vibe=kids" class="kids-cat-card__link">
+            <span class="kids-cat-card__blob kids-cat-card__blob--1" aria-hidden="true"></span>
+            <span class="kids-cat-card__blob kids-cat-card__blob--2" aria-hidden="true"></span>
+            <img src="assets/baby-clothes/baby-1.jpg" alt="Toys" class="kids-cat-card__img" loading="lazy" />
+            <div class="kids-cat-card__footer">
+              <span class="kids-cat-card__name">Toys</span>
+              <span class="kids-cat-card__arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════ VIBE BRIDGE: Kids → Perfume ═══════════════════════════ -->
+  <div class="vibe-bridge vibe-bridge--kids-to-perfume" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════ SECTION 2 — PERFUME ═══════════════════════════ -->
+<section id="perfume" class="category-section vibe-section perfume-section" data-vibe="perfume">
+
+    <!-- Hero card -->
+    <div class="pf-hero">
+      <img src="assets/perfume/perfume-1.jpg" alt="" class="pf-hero__bg" onerror="this.style.display='none'" />
+      <div class="pf-hero__shade" aria-hidden="true"></div>
+      <div class="pf-hero__content">
+        <span class="pf-hero__pill">An impression that lingers</span>
+        <h1 class="pf-hero__title">Let your scent<br>speak first</h1>
+        <a href="#perfume-products" class="pf-hero__cta">
+          <span>Discover The Scent</span>
+          <span class="pf-hero__cta-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Product carousel -->
+    <div id="perfume-products" class="pf-products">
+      <div class="pf-track" id="pf-track">
+        <article class="pf-card">
+          <a href="product.html?id=perfume-1&vibe=perfume" class="pf-card__link">
+            <div class="pf-card__media"><img src="assets/perfume/perfume-1.jpg" alt="Dark Sage" loading="lazy" /></div>
+            <p class="pf-card__name">Dark Sage</p>
+          </a>
+        </article>
+        <article class="pf-card is-active">
+          <a href="product.html?id=perfume-2&vibe=perfume" class="pf-card__link">
+            <div class="pf-card__media"><img src="assets/perfume/perfume-2.jpg" alt="Noir Woods" loading="lazy" /></div>
+            <p class="pf-card__name">Noir Woods</p>
+          </a>
+        </article>
+        <article class="pf-card">
+          <a href="product.html?id=perfume-3&vibe=perfume" class="pf-card__link">
+            <div class="pf-card__media"><img src="assets/perfume/perfume-3.jpg" alt="Obsidian Amber" loading="lazy" /></div>
+            <p class="pf-card__name">Obsidian Amber</p>
+          </a>
+        </article>
+        <article class="pf-card">
+          <a href="product.html?id=perfume-4&vibe=perfume" class="pf-card__link">
+            <div class="pf-card__media"><img src="assets/perfume/perfume-4.jpg" alt="Steel Vetiver" loading="lazy" /></div>
+            <p class="pf-card__name">Steel Vetiver</p>
+          </a>
+        </article>
+        <article class="pf-card">
+          <a href="product.html?id=perfume-3&vibe=perfume" class="pf-card__link">
+            <div class="pf-card__media"><img src="assets/perfume/perfume-3.jpg" alt="Rose Incense" loading="lazy" /></div>
+            <p class="pf-card__name">Rose Incense</p>
+          </a>
+        </article>
+        <article class="pf-card">
+          <a href="product.html?id=perfume-1&vibe=perfume" class="pf-card__link">
+            <div class="pf-card__media"><img src="assets/perfume/perfume-1.jpg" alt="Dark Oud Noir" loading="lazy" /></div>
+            <p class="pf-card__name">Dark Oud Noir</p>
+          </a>
+        </article>
+      </div>
+      <div class="pf-controls">
+        <div class="pf-progress" aria-hidden="true"><span class="pf-progress__thumb" id="pf-thumb"></span></div>
+        <div class="pf-arrows">
+          <button class="pf-arrow pf-arrow--prev" id="pf-prev" aria-label="Previous">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          </button>
+          <button class="pf-arrow pf-arrow--next" id="pf-next" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════ VIBE BRIDGE: Perfume → Shoes ═══════════════════════════ -->
+  <div class="vibe-bridge vibe-bridge--perfume-to-shoes" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════ SECTION 3 — SHOES ═══════════════════════════ -->
+  <section id="shoes" class="category-section vibe-section shoes-section" data-vibe="shoes">
+
+    <!-- Hero card -->
+    <div class="sh-hero">
+      <div class="sh-hero__content">
+        <span class="sh-hero__pill">New drop 2026</span>
+        <h1 class="sh-hero__title">Step into<br>your story</h1>
+        <a href="#shoes-products" class="sh-hero__cta">
+          <span>Shop The Drop</span>
+          <span class="sh-hero__cta-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+      <div class="sh-hero__disc" aria-hidden="true">
+        <img src="assets/shoes/shoes-1.jpg" alt="" class="sh-hero__shoe" />
+      </div>
+    </div>
+
+    <!-- Product carousel -->
+    <div id="shoes-products" class="sh-products">
+      <div class="sh-track" id="sh-track">
+        <article class="sh-card">
+          <a href="product.html?id=shoes-1&vibe=shoes" class="sh-card__link">
+            <div class="sh-card__media"><img src="assets/shoes/shoes-1.jpg" alt="Street Runner Pro" loading="lazy" /></div>
+            <div class="sh-card__meta"><p class="sh-card__name">Street Runner Pro</p><p class="sh-card__price">SAR 650</p></div>
+          </a>
+        </article>
+        <article class="sh-card is-active">
+          <a href="product.html?id=shoes-2&vibe=shoes" class="sh-card__link">
+            <div class="sh-card__media"><img src="assets/shoes/shoes-2.jpg" alt="Neon Night Kicks" loading="lazy" /></div>
+            <div class="sh-card__meta"><p class="sh-card__name">Neon Night Kicks</p><p class="sh-card__price">SAR 780</p></div>
+          </a>
+        </article>
+        <article class="sh-card">
+          <a href="product.html?id=shoes-3&vibe=shoes" class="sh-card__link">
+            <div class="sh-card__media"><img src="assets/shoes/shoes-3.jpg" alt="Urban Edge Lows" loading="lazy" /></div>
+            <div class="sh-card__meta"><p class="sh-card__name">Urban Edge Lows</p><p class="sh-card__price">SAR 590</p></div>
+          </a>
+        </article>
+        <article class="sh-card">
+          <a href="product.html?id=shoes-4&vibe=shoes" class="sh-card__link">
+            <div class="sh-card__media"><img src="assets/shoes/shoes-4.jpg" alt="Classic Court Air" loading="lazy" /></div>
+            <div class="sh-card__meta"><p class="sh-card__name">Classic Court Air</p><p class="sh-card__price">SAR 420</p></div>
+          </a>
+        </article>
+        <article class="sh-card">
+          <a href="product.html?id=shoes-1&vibe=shoes" class="sh-card__link">
+            <div class="sh-card__media"><img src="assets/shoes/shoes-1.jpg" alt="Jordan x Dior Air" loading="lazy" /></div>
+            <div class="sh-card__meta"><p class="sh-card__name">Jordan x Dior Air</p><p class="sh-card__price">SAR 8,450</p></div>
+          </a>
+        </article>
+        <article class="sh-card">
+          <a href="product.html?id=shoes-2&vibe=shoes" class="sh-card__link">
+            <div class="sh-card__media"><img src="assets/shoes/shoes-2.jpg" alt="Nike Air Max" loading="lazy" /></div>
+            <div class="sh-card__meta"><p class="sh-card__name">Nike Air Max</p><p class="sh-card__price">SAR 650</p></div>
+          </a>
+        </article>
+      </div>
+      <div class="sh-controls">
+        <div class="sh-progress" aria-hidden="true"><span class="sh-progress__thumb" id="sh-thumb"></span></div>
+        <div class="sh-arrows">
+          <button class="sh-arrow sh-arrow--prev" id="sh-prev" aria-label="Previous">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          </button>
+          <button class="sh-arrow sh-arrow--next" id="sh-next" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="logo-gs">Gulf</span><span class="logo-store">Store</span>
+        <p>Premium lifestyle. Every scroll, a new world.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Shop</h4>
+        <a href="#kids">Kids Collection</a>
+        <a href="#perfume">Perfumes</a>
+        <a href="#shoes">Shoes</a>
+      </div>
+      <div class="footer__links">
+        <h4>Help</h4>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer__social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></a>
+          <a href="#" aria-label="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__copy">
+      <p>© 2026 Gulf Store. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
