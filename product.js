@@ -294,12 +294,8 @@ function renderProduct(product) {
 
   document.title = `${product.name} — Gulf Store`;
 
-  // Apply vibe immediately (with View Transition if supported)
-  if (document.startViewTransition) {
-    document.startViewTransition(() => applyVibe(product.vibe));
-  } else {
-    applyVibe(product.vibe);
-  }
+  // Apply vibe immediately
+  applyVibe(product.vibe);
 
   // Build background deco
   const decoCont = document.getElementById('product-bg-deco');
@@ -471,19 +467,6 @@ navStyle.textContent = `
     position: relative;
     z-index: 1;
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    ::view-transition-group(*),
-    ::view-transition-old(*),
-    ::view-transition-new(*) { animation: none !important; }
-  }
-  ::view-transition-old(root) { animation: 400ms both vt-fade-out; }
-  ::view-transition-new(root) { animation: 600ms both vt-fade-in; }
-  @keyframes vt-fade-out { from { opacity:1; } to { opacity:0; } }
-  @keyframes vt-fade-in  { from { opacity:0; } to { opacity:1; } }
-  .navbar { view-transition-name: navbar; }
-  ::view-transition-old(navbar),
-  ::view-transition-new(navbar) { animation: none; mix-blend-mode: normal; }
 `;
 document.head.appendChild(navStyle);
 

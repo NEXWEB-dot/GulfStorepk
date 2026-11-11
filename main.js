@@ -42,51 +42,29 @@ const vibeDots  = document.querySelectorAll('.vibe-dot');
 const sections  = document.querySelectorAll('.vibe-section[data-vibe]');
 
 /* ═══════════════════════════════════════════════
-   Apply a vibe
+   Apply a vibe — clean, instant swap without freezing or flashing
    ═══════════════════════════════════════════════ */
 function applyVibe(newVibe) {
-  if (newVibe === currentVibe || isTransitioning) return;
-  isTransitioning = true;
+  if (newVibe === currentVibe) return;
 
   const def = VIBES[newVibe];
-  if (!def) { isTransitioning = false; return; }
+  if (!def) return;
 
-  const doTransition = () => {
-    // Swap body class
-    Object.values(VIBES).forEach(v => body.classList.remove(v.bodyClass));
-    body.classList.add(def.bodyClass);
-    body.dataset.vibe = newVibe;
-    currentVibe = newVibe;
+  // Swap body class directly
+  Object.values(VIBES).forEach(v => body.classList.remove(v.bodyClass));
+  body.classList.add(def.bodyClass);
+  body.dataset.vibe = newVibe;
+  currentVibe = newVibe;
 
-    // Update active nav link
-    navLinks.forEach(link => {
-      link.classList.toggle('active', link.dataset.target === newVibe);
-    });
+  // Update active nav link
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.dataset.target === newVibe);
+  });
 
-    // Update active vibe dot
-    vibeDots.forEach(dot => {
-      dot.classList.toggle('active', dot.dataset.vibe === newVibe);
-    });
-  };
-
-  // Use View Transitions API when available
-  if (document.startViewTransition) {
-    const t = document.startViewTransition(doTransition);
-    t.finished.finally(() => { isTransitioning = false; });
-  } else {
-    // Overlay flash fallback
-    if (overlay) {
-      overlay.classList.add('flash');
-      setTimeout(() => {
-        doTransition();
-        overlay.classList.remove('flash');
-        isTransitioning = false;
-      }, 150);
-    } else {
-      doTransition();
-      isTransitioning = false;
-    }
-  }
+  // Update active vibe dot
+  vibeDots.forEach(dot => {
+    dot.classList.toggle('active', dot.dataset.vibe === newVibe);
+  });
 }
 
 /* ═══════════════════════════════════════════════
@@ -226,46 +204,6 @@ if (prevCatBtn && nextCatBtn && catGridEl) {
     }, { passive: true });
   }
 })();
-
-/* ═══════════════════════════════════════════════
-   View Transitions reduced-motion CSS injection
-   ═══════════════════════════════════════════════ */
-const vtStyle = document.createElement('style');
-vtStyle.textContent = `
-  @media (prefers-reduced-motion: reduce) {
-    ::view-transition-group(*),
-    ::view-transition-old(*),
-    ::view-transition-new(*) {
-      animation: none !important;
-    }
-  }
-
-  /* View Transition: body background cross-fade */
-  ::view-transition-old(root) {
-    animation: 400ms cubic-bezier(0.4, 0, 0.2, 1) both vt-fade-out;
-  }
-  ::view-transition-new(root) {
-    animation: 600ms cubic-bezier(0.4, 0, 0.2, 1) both vt-fade-in;
-  }
-  @keyframes vt-fade-out {
-    from { opacity: 1; }
-    to   { opacity: 0; }
-  }
-  @keyframes vt-fade-in {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-
-  /* Navbar — persist across transition */
-  .navbar { view-transition-name: navbar; }
-  ::view-transition-old(navbar),
-  ::view-transition-new(navbar) {
-    animation: none;
-    mix-blend-mode: normal;
-  }
-`;
-document.head.appendChild(vtStyle);
-
 
 /* ═══════════════════════════════════════════════
    Navbar menu (perfume vibe)
